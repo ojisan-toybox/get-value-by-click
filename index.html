@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get value by click</title>
+  </head>
+  <body>
+    <h1>onsubmit使わずにformを送りたい</h1>
+    <h2>formタグなし</h2>
+    <input name="item" id="item" />
+    <button id="submit" onclick="submitWithoutForm()">submit</button>
+
+    <h2>formタグあり</h2>
+    <form name="form">
+      <input name="item" id="item" />
+      <button id="submit" onclick="submitWith()">submit</button>
+    </form>
+    <script>
+      function submitWithoutForm() {
+        const inputEl = document.getElementById("item");
+        inputEl.value = "";
+      }
+      function submitWith() {
+        const inputEl = document.forms.form.item.value;
+      }
+    </script>
+  </body>
+</html>
